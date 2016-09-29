@@ -19,7 +19,21 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->model('blog_category');
+		$this->load->model('blog_model');
+		$cate_Id=$this->input->get('cateId');
+		if(!$cate_Id){
+			$blogs=$this->blog_model->get_all();
+		}else{
+			$blogs=$this->blog_model->get_blog_by_id($cate_Id);
+		}
+
+		$result=$this->blog_category->get_all();
+		$this->load->view('index',array(
+			'categories'=>$result,
+			'blogs'=>$blogs
+		));
+
 	}
 }
 
