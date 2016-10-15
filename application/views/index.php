@@ -20,6 +20,7 @@
 <!--//webfonts-->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 <!--/script-->
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
@@ -264,40 +265,72 @@
 </script>
 
 <div  class="gallery" id="myport">
-	<div >
-		<h3 class="tittle port" style="color: black;">我的作品分类</h3>
-		<ul id="myproject" style="text-align: center;">
-			<li ><a href="#myport" style="color: black;">all</a></li>
-			<?php
-			foreach ($categories as $categorie){
-				?>
-				<li><a href="welcome/index?cateId=<?php echo $categorie->cate_id;?>" style="color: black;"><?php echo $categorie->cate_name ?></a></li>
+	<div class="blog-cate">
+		<div id="gallery1">
+			<h3 class="tittle port" id='ga-title' style="color: white;">我的作品</h3>
+			<ul id="myproject">
+				<li class="all " ><a href="javascript:;" data-id=0 >all</a></li>
 				<?php
-			}?>
-			<?php
-			foreach ($blogs as $blog){
+				foreach ($categories as $categorie){
+					?>
+					<li><a href="javascript:;" style="color: black;" data-id="<?php echo $categorie->cate_id?>"><?php echo $categorie->cate_name ?></a></li>
+					<?php
+				}?>
+			</ul>
+		</div>
+		
+			<div class="gallery2">
+				<div class="gallery-bottom" >
+				<?php
+				foreach ($blogs as $blog){
 				?>
-			<div class="gallery-bottom" >
-				<div class="col-md-4 bottom-gallery">
-					<a href="#" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img class="img-responsive" src="<?php   echo $blog->img;?>" style="width: 400px;height: 400px;" />
-						<div class="b-wrapper">
-							<h3 class="b-animate b-from-left    b-delay03 "> <?php   echo $blog->title;?></h3>
 
-						</div>
-						<h3  > <?php   echo $blog->title;?></h3>
-						<h3  style="font-size: 10px; color:white;"> <?php   echo $blog->content;?></h3>
-					</a>
+					<div class="col-md-4 bottom-gallery">
+						<a href="welcome/view_blog?blogId=" rel="title" class="b-link-stripe b-animate-go  thickbox">
+							<img class="img-responsive" src="<?php echo $blog->img?>" style="width: 300px;height: 300px;" />
+
+							<div class="b-wrapper">
+								<h3 class="b-animate b-from-left    b-delay03 "></h3>
+
+							</div>
+							<h3  ><?php echo $blog->title?></h3>
+							<h2  style="font-size: 10px; color:white;"><?php echo $blog->content?></h2>
+						</a>
+					</div>
+					<?php
+					}?>
+
+
 				</div>
-				<?php
-			}?>
-
-
+			
 			<div class="clearfix"> </div>
 		</div>
 
 	</div>
 </div>
+
+
+<!--<!--  <div class="contact" id="contact">-->
+<!--       <div class="col-md-6 contact-top">-->
+<!--               <div class="point"> <i class="glyphicon glyphicon-map-marker"></i></div>-->
+<!--            <h3 class="tittle two">Find Me</h3>-->
+<!--            <h4>For Any questions, Please feel free to Contact me by mail.</h4>-->
+<!--               <div class="contact-ad">-->
+<!--                      <p>Address:Newyork Still Road.756 gt globel Place.<p>-->
+<!--                      <p>Phone:Newyork Still Road.756 gt globel Place.<p>-->
+<!--                      <p>E-mail :<a href="mailto:info@example.com">mail@example.com</a></p>-->
+<!---->
+<!--               </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-6 map">-->
+<!--              <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Purwokerto,+Central+Java,+Indonesia&amp;aq=0&amp;oq=purwo&amp;sll=37.0625,-95.677068&amp;sspn=50.291089,104.238281&amp;ie=UTF8&amp;hq=&amp;hnear=Purwokerto,+Banyumas,+Central+Java,+Indonesia&amp;ll=-7.431391,109.24783&amp;spn=0.031022,0.050898&amp;t=m&amp;z=14&amp;output=embed"></iframe>-->
+<!--              <div class="black">-->
+<!--                <div class="map-l"> <i class="glyphicon glyphicon-map-marker"></i></div>-->
+<!--              </div>-->
+<!--          </div>-->
+<!--          <div class="clearfix"> </div>-->
+<!-- </div> -->
+<!--<!--//contact-->
 <script src="js/jquery.chocolat.js"></script>
 <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">
 <!--light-box-files -->
@@ -342,29 +375,6 @@
 		</div>
 	</div>
 </div>
-
-<!--  <div class="contact" id="contact">
-       <div class="col-md-6 contact-top">
-               <div class="point"> <i class="glyphicon glyphicon-map-marker"></i></div>
-            <h3 class="tittle two">Find Me</h3>
-            <h4>For Any questions, Please feel free to Contact me by mail.</h4>
-               <div class="contact-ad">
-                      <p>Address:Newyork Still Road.756 gt globel Place.<p>
-                      <p>Phone:Newyork Still Road.756 gt globel Place.<p>
-                      <p>E-mail :<a href="mailto:info@example.com">mail@example.com</a></p>
-
-               </div>
-        </div>
-        <div class="col-md-6 map">
-              <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Purwokerto,+Central+Java,+Indonesia&amp;aq=0&amp;oq=purwo&amp;sll=37.0625,-95.677068&amp;sspn=50.291089,104.238281&amp;ie=UTF8&amp;hq=&amp;hnear=Purwokerto,+Banyumas,+Central+Java,+Indonesia&amp;ll=-7.431391,109.24783&amp;spn=0.031022,0.050898&amp;t=m&amp;z=14&amp;output=embed"></iframe>
-              <div class="black">
-                <div class="map-l"> <i class="glyphicon glyphicon-map-marker"></i></div>
-              </div>
-          </div>
-          <div class="clearfix"> </div>
- </div> -->
-<!--//contact-->
-
 
 <!--footer-->
 <div class="copy">

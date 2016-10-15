@@ -35,6 +35,30 @@ class Welcome extends CI_Controller {
 		));
 
 	}
+//	public function view_blog(){
+//		$this->load->model('blog_category');
+//		$this->load->model('blog_model');
+//		$blog_id=$this->input->get('blogId');
+//		$blogs=$this->blog_model-> get_blog_by_blogId($blog_id);
+//
+//		$this->load->view('view',array(
+//			'blogs'=>$blogs
+//		));
+//
+//	}
+	public function get_allblog(){
+		$this->load->model('blog_model');
+		$blogs=$this->blog_model->get_all();
+			echo json_encode($blogs);
+	}
+	public function get_blog(){
+
+		 $cate_Id=$this->input->get('cataId');
+		$this->load->model('blog_model');
+		$blogs=$this->blog_model->get_blog_by_id($cate_Id);
+		echo json_encode($blogs);
+		
+	}
 }
 
 /* End of file welcome.php */
