@@ -35,17 +35,25 @@ class Welcome extends CI_Controller {
 		));
 
 	}
-//	public function view_blog(){
-//		$this->load->model('blog_category');
-//		$this->load->model('blog_model');
-//		$blog_id=$this->input->get('blogId');
-//		$blogs=$this->blog_model-> get_blog_by_blogId($blog_id);
-//
-//		$this->load->view('view',array(
-//			'blogs'=>$blogs
-//		));
-//
-//	}
+	public function view_blog(){
+		$this->load->model('blog_category');
+		$this->load->model('blog_model');
+		$this->load->model('comment_model');
+		$blog_id=$this->input->get('blogId');
+		$blogs=$this->blog_model-> get_blog_by_blogId($blog_id);
+		$blogs->comments=$this->comment_model->get_comment_by_blogId($blog_id);
+
+		if($blogs){
+			$this->load->view('view',array(
+				'blogs'=>$blogs
+			));
+		}else{
+			echo '未查到指定文章';
+
+		}
+
+
+	}
 	public function get_allblog(){
 		$this->load->model('blog_model');
 		$blogs=$this->blog_model->get_all();

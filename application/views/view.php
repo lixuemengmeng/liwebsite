@@ -6,6 +6,7 @@
     <base href="<?php echo site_url();?>">
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/view.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="applijegleryion/x-javascript">
 	addEventListener("load", function() {
@@ -32,17 +33,8 @@
     </script>
 </head>
 <body>
-<!--start-home-->
-<ul class="side_nav">
-    <li><a class="active scroll" href="#home"></a></li>
-    <li><a class="scroll" href="#about"></a></li>
-    <!-- <li><a class="scroll" href="#experience"></a></li> -->
-    <li><a class="scroll" href="#skill"></a></li>
-    <li><a class="scroll" href="#project"></a></li>
-    <li><a class="scroll" href="#myport"></a></li>
-    <li><a class="scroll" href="#contact"></a></li>
-</ul>
-<div class="banner" id="home">
+
+<div class="head">
     <div class="header-top">
         <div class="container">
             <!--top-nav-->
@@ -96,25 +88,6 @@
             <!-- script-for-menu -->
         </div>
     </div>
-    <!--banner-->
-    <div class="container">
-        <!-- script-for-menu -->
-        <div class="banner-info">
-            <div class="logo">
-                <a href="index.html"><h1 style="font-size:60px">Welcome to my website </h1>
-                    <h1 style="font-size:40px;color:#ccc; ">I am lixuemeng</h1></a>
-            </div>
-            <p style="font-size:20px;color:black; ">welcome to my website   </p>
-            <p style="font-size:20px;color:black; ">my name is lixuemeng  </p>
-            <p style="font-size:20px;color:black; ">I'm study in heilongjiang university</p>
-            <p style="font-size:20px;color:black; ">I'm a web engineer</p>
-
-            <div class="scroll-down">
-                <h4>SCROLL DOWN</h4>
-                <a class="downarrow scroll" href="#about"><span></span></a>
-            </div>
-        </div>
-    </div>
 </div>
 
 
@@ -129,38 +102,58 @@
     //	});
 </script>
 
-<div  class="gallery" id="myport">
-    <div class="blog-cate">
+<div  id="view">
         <h3 class="tittle port" style="color: white;">详情</h3>
-        <ul id="myproject" style="text-align: center;">
 
-
-            <?php
-            foreach ($blogs as $blog){
-            ?>
-            <div class="gallery-bottom" >
-                <div class="col-md-4 bottom-gallery" id="gallery-content">
-
-                    <div id="gallery-imgs">
-                        <img class="img-responsive" src="<?php   echo $blog->img;?>"  />
+            <div id="view-div" >
+                <h3  > 标题为:<?php   echo $blogs->title;?></h3>
+                    <div id="view-imgs">
+                        <img  src="<?php   echo $blogs->img;?>"  />
                     </div>
 
-                    <div id="gallery-h3">
-                        <h3  > 标题为:<?php   echo $blog->title;?></h3>
-                        <h3 > 文章内容:<?php   echo $blog->content;?></h3>
+                    <div id="view-h3">
+                        <span>类别:<?php   echo $blogs->cate_name;?>|</span><span>时间为:<?php   echo $blogs->post_date;?>|</span><span> 点击量:<?php   echo $blogs->clicked;?>|</span>
+                        <p > 文章内容:<?php   echo $blogs->content;?></p>
+
 
                     </div>
                       
 
                 </div>
-                <?php
-                }
+
+
+</div>
+<div id="comment">
+    <div id="comment-view">
+        <h3><span><?php echo count($blogs->comments )?></span>RESPONSE</h3>
+        <ul class="list">
+            <?php foreach ($blogs->comments as  $comment) {
                 ?>
+                <li class="comment-li">
+                    <div class="comment-info">
+                        <span class="username">评论者:<?php echo $comment->username?></span>
+                        <span class="post-date">评论时间:<?php echo $comment->post_date?></span>
+                    </div>
 
-                <div class="clearfix"> </div>
-            </div>
+                    <p class="content">评论内容:<?php echo $comment->content?></p>
+                </li>
+                <?php
+            }
+            ?>
 
+        </ul>
     </div>
+    <div id="comment-form">
+        <h3>leave a comment</h3>
+        <form action="" method="post">
+            <p><input type="text" placeholder="Name" id="username"></p>
+            <p><input type="email" placeholder="Email" id="email"></p>
+            <p><input type="tel" placeholder="Phone" id="phone"></p>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <input id='sub' type="submit" value="Send">
+        </form>
+    </div>
+
 </div>
 <script src="js/jquery.chocolat.js"></script>
 <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">
@@ -175,20 +168,11 @@
 <!--//portfolio-->
 
 
-<div class="copy">
-    <p>&copy;by lixuemeng<a href="http://w3layouts.com/"></a> </p>
-</div>
+
 <!--start-smoth-scrolling-->
 <script type="text/javascript">
     $(document).ready(function() {
-        /*
-         var defaults = {
-         containerID: 'toTop', // fading element id
-         containerHoverID: 'toTopHover', // fading element hover id
-         scrollSpeed: 1200,
-         easingType: 'linear'
-         };
-         */
+
 
         $().UItoTop({ easingType: 'easeOutQuart' });
 

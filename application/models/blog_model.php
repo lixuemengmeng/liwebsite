@@ -15,7 +15,12 @@ class Blog_model extends CI_Model {
     }
     public function get_blog_by_blogId($blogId)
     {
-        $this->db->order_by('post_date','desc');
-        return $this->db->get_where('blog',array('blog_id'=>$blogId))->result();
+
+//        return $this->db->get_where('blog',array('blog_id'=>$blogId))->result();
+        $this->db->select('blog1.*,cate1.cate_name');
+        $this->db->from('blog blog1');
+        $this->db->join('cate cate1','blog1.cate_id=cate1.cate_id');
+        $this->db->where('blog1.blog_id',$blogId);
+        return $this->db->get()->row();
     }
 }

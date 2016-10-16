@@ -8,6 +8,7 @@ html, body{
 	font-family: 'Raleway', sans-serif;
 	font-size: 100%;
 	background: #FFf;
+
 }
 body a {
 	transition:0.5s all;
@@ -195,8 +196,8 @@ i.arrow {
   text-transform: uppercase;
   }
  #loginpop a span:hover{
-	background:#53bed6;
-	 border: 1px solid #53bed6;
+	background: #8a8577;
+	 border: 1px solid #8a8577;
 	 color:#fff;
  }
 /* Login Button */
@@ -267,7 +268,7 @@ fieldset#body {
 #loginForm #login {
   width: auto;
   float: left;
-  background:#53bed6;
+  background:#8a8577;
   color: #fff;
   font-size: 0.8725em;
   padding: 7px 20px;
@@ -341,7 +342,7 @@ fieldset#body {
 	  z-index: 999;
 	  position: absolute;
 	    width: 93.5%;
-	  background:#53bed6;
+	  background:#8a8577;
 	  text-align: center;
 	  margin-left: -2.3em;
 	}
@@ -450,12 +451,12 @@ span.devide-line {
 	position: absolute;
 	top: 5.4em;
 	display: initial;
-	background: #53bed6;
+	background: #8a8577;
 	left: 50%;
 }
 .experience-left h4, .experience-left-trd h4,.experience-right-snd h4 {
   font-size: 1.4em;
-  color: #53bed6;
+  color: #8a8577;
   margin: 0px;
   text-transform: uppercase;
 }
@@ -486,12 +487,12 @@ span.devide-line {
 	top: 22.35em;
 }
 .experience-left span, .experience-left-snd span, .experience-left-trd span {
-   color: #53bed6;
+   color: #8a8577;
   font-size: 1.7em;
   position: relative;
   right: -3.825em;
   padding: 14px;
-  border: 2px dotted #53bed6;
+  border: 2px dotted #8a8577;
   border-radius: 50%;
   -o-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -716,7 +717,7 @@ h3.tittle.port {
 
 .gallery {
    padding:5em 0;
-  background-color: #34353A;
+    background: url(../images/2.jpg);
     height: 1220px;
     width: 100%;
 }
@@ -763,7 +764,7 @@ label {
   outline: none;
   padding: 0.7em 0.7em;
   color: #fff;
-  background: #53bed6;
+  background: #8a8577;
   text-transform: uppercase;
   font-weight:500;
   font-size: 0.95em;
@@ -827,17 +828,17 @@ h3.tittle.two {
    padding: 7em 0 0 13em;
 }
 .point i {
-  color:#53bed6;
+  color:#8a8577;
   font-size: 4em;
 }
 .map-l i {
-  color:#53bed6;
+  color:#8a8577;
   font-size: 4em;
 }
 /*--welcome--*/
 .copy {
    text-align: center;
-    background:#53bed6;
+    background:#8a8577;
     padding: 1em 1em;
   }
 .copy p {
@@ -885,7 +886,7 @@ h3.tittle.two {
 	  text-align: center;
 	}
 	.banner {
-	  background: #f6608a;
+	  background: #8a6986;
 	  min-height: 700px;
 	}
 	.contact-top {
@@ -1214,7 +1215,7 @@ h3.tittle.two {
 	  z-index: 999;
 	  position: absolute;
 	  width: 95.5%;
-	  background: #53bed6;
+	  background:#8a8577;
 	  text-align: center;
 	  margin-left: -2.3em;
 	}
@@ -2040,26 +2041,7 @@ h3.tittle.two {
   }
 }
 
-#gallery-imgs {
-    width: 500px;
-    height:600px;
-    padding: 50px 50px 50px 50px;
-    background: #CCCCCC;
-    float: left;
 
-}
-#gallery-imgs img{
-    width: 500px;
-    height:500px;
-
-}
-#gallery-h3{
-    width: 500px;
-    height:600px;
-    padding: 50px 50px 50px 50px;
-    background: #CCCCCC;
-    float: left;
-}
 #gallery1{
     width: 100%;
     height: 100px;
@@ -2086,20 +2068,32 @@ h3.tittle.two {
     position: relative;
 
 }
+#myproject{
+    width: 400px;
+    height: 50px;
+
+}
 #myproject li{
     float: right;
     list-style: none;
-    margin-right: 20px;
-
+    margin: 0 30px;
+    width: 60px;
+    height: 50px;
+    display: block;
     text-align: center;
     line-height: 30px;
 
 
 }
 #myproject li a{
-
-    color: black;
+    width: 60px;
+    height: 40px;
+    display: block;
+    color: #ececec;
     text-decoration: none;
+    font-size: 20px;
+
+
 }
 .activty{
 
@@ -2108,4 +2102,20 @@ h3.tittle.two {
     border-radius: 4px;
     background: #0bb6ff;
 
+}
+.blog img{
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin-left: 60px;
+}
+.blog-h2{
+    margin-left: 60px;
+    font-size: 18px;
+    color: #61661f;
+}
+.blog-h3{
+    margin-left: 60px;
+    font-size: 12px;
+    color: #8aec63;
 }

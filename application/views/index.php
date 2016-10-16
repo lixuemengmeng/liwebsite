@@ -273,7 +273,7 @@
 				<?php
 				foreach ($categories as $categorie){
 					?>
-					<li><a href="javascript:;" style="color: black;" data-id="<?php echo $categorie->cate_id?>"><?php echo $categorie->cate_name ?></a></li>
+					<li><a href="javascript:;"  data-id="<?php echo $categorie->cate_id?>"><?php echo $categorie->cate_name ?></a></li>
 					<?php
 				}?>
 			</ul>
@@ -285,16 +285,11 @@
 				foreach ($blogs as $blog){
 				?>
 
-					<div class="col-md-4 bottom-gallery">
-						<a href="welcome/view_blog?blogId=" rel="title" class="b-link-stripe b-animate-go  thickbox">
-							<img class="img-responsive" src="<?php echo $blog->img?>" style="width: 300px;height: 300px;" />
-
-							<div class="b-wrapper">
-								<h3 class="b-animate b-from-left    b-delay03 "></h3>
-
-							</div>
-							<h3  ><?php echo $blog->title?></h3>
-							<h2  style="font-size: 10px; color:white;"><?php echo $blog->content?></h2>
+					<div class="col-md-4 bottom-gallery blog">
+						<a href="welcome/view_blog?blogId=<?php echo $blog->blog_id?>" rel="title" class="b-link-stripe b-animate-go  thickbox">
+							<img class="img-responsive" src="<?php echo $blog->img?>" />
+							<h2  class="blog-h2"><?php echo $blog->title?></h2>
+							<h3  class="blog-h3"><?php echo $blog->content?></h3>
 						</a>
 					</div>
 					<?php
