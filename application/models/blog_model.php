@@ -13,6 +13,16 @@ class Blog_model extends CI_Model {
         $this->db->order_by('post_date','desc');
         return $this->db->get_where('blog',array('cate_id'=>$cateId))->result();
     }
+
+    /**
+     * @param $offset
+     * @return mixed
+     */
+    public function get_blog_byPage($offset=0){
+        $this->db->order_by('post_date','desc');
+        $this->db->limit(6,$offset);
+        return $this->db->get('blog')->result();
+    }
     public function get_blog_by_blogId($blogId)
     {
 

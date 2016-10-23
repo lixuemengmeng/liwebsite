@@ -1,5 +1,8 @@
 
     $(function (){
+        $('#project').on('click',function () {
+           alert(123);
+        });
         $('.blog-cate a').on('click',function(){
           $(this).parent().siblings().children('a').removeClass('activty');
             $(this).addClass('activty');

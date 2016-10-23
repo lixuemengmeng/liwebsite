@@ -67,6 +67,35 @@ class Welcome extends CI_Controller {
 		echo json_encode($blogs);
 		
 	}
+	public function blog_list(){
+		$this->load->model('blog_model');
+		$blogs=$this->blog_model->get_blog_byPage( );
+		$this->load->view('project.php',array(
+			'blogs'=>$blogs
+		));
+	}
+	public function get_moreblog(){
+		$offset=$this->input->get('offset');
+		$this->load->model('blog_model');
+		$blogs=$this->blog_model->get_blog_byPage($offset);
+		echo json_encode($blogs);
+	}
+	public function add_comment(){
+		$username=$this->input->post('username');
+		$email=$this->input->post('email');
+		$phone=$this->input->post('phone');
+		$message=$this->input->post('message');
+		$blogId=$this->input->post('blogId');
+		$this->load->model('comment_model');
+		$result=$this->comment_model->save_comment($username,$email,$phone,$message,$blogId);
+		if($result>0){
+			echo 'success';
+		}else{
+			echo 'fail';
+		}
+
+
+	}
 }
 
 /* End of file welcome.php */

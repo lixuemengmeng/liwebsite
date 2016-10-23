@@ -54,7 +54,7 @@
 						<li><a class="scroll" href="#" data-hover="About">About</a></li>
 						<li><a class="scroll" href="#" data-hover="experience">experience</a></li>
 						<li><a class="scroll" href="#" data-hover="Skills">Skills</a></li>
-						<li><a class="scroll" href="#" data-hover="Projects">Projects</a></li>
+						<li><a href="welcome/blog_list" data-hover="Projects" >Projects</a></li>
 						<li><a class="scroll" href="#" data-hover="Portfolio">Portfolio</a></li>
 						<li><a class="scroll" href="#" data-hover="Contact">Contact</a></li>
 						<div class="clearfix"></div>
