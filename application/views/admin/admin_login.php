@@ -6,15 +6,15 @@
     <base href="<?php echo site_url();?>">
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-
-    <link href="css/project.css" rel='stylesheet' type='text/css' />
+    <link href="css/admin/login.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="applijegleryion/x-javascript">
 	addEventListener("load", function() {
-	setTimeout(hideURLbar, 0);
+	setTimeout(hideURLbar, 0); 
 	}, false);
 	function hideURLbar(){ window.scrollTo(0,1); } </script>
     <script src="js/jquery-1.11.1.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Candal|Raleway:500,600,400' rel='stylesheet' type='text/css'>
 
 
 
@@ -22,10 +22,18 @@
     <script type="text/javascript" src="js/move-top.js"></script>
     <script type="text/javascript" src="js/easing.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-
+    <!--/script-->
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+            });
+        });
+    </script>
 </head>
 <body>
-<div class="head">
+<div class="banner" id="home">
     <div class="header-top">
         <div class="container">
             <!--top-nav-->
@@ -44,27 +52,7 @@
                     </ul>
                 </nav>
             </div>
-            <div class="login-pop">
-                <div id="loginpop"><a href="#" id="loginButton"><span>Login <i class="arrow glyphicon glyphicon-chevron-right"></i></span></a>
-                    <div id="loginBox">
-                        <form id="loginForm">
-                            <fieldset id="body">
-                                <fieldset>
-                                    <label for="email">Email Address</label>
-                                    <input type="text" name="email" id="email">
-                                </fieldset>
-                                <fieldset>
-                                    <label for="password">Password</label>
-                                    <input type="password" name="password" id="password">
-                                </fieldset>
-                                <input type="submit" id="login" value="Sign in">
-                                <label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
-                            </fieldset>
-                            <span><a href="#">Forgot your password?</a></span>
-                        </form>
-                    </div>
-                </div>
-            </div><script src="js/menu_jquery.js"></script>
+         <script src="js/menu_jquery.js"></script>
 
             <!-- script-for-menu -->
             <script>
@@ -79,33 +67,32 @@
             <!-- script-for-menu -->
         </div>
     </div>
-</div>
-<div id="blog_con">
-    <div class="wrapper">
+    <div id="login">
+        <div class="wrapper">
+            <h3 class="login_h3">个人网站后台登录</h3>
+            <div id="login_div">
+                <h3>LOGIN</h3>
+                <form action="" class="login_form">
+                    <p>邮箱:</p>
+                    <input type="email" id="email" name="email" value="email">
+                    <p>密码</p>
+                    <input type="password" id="pass"  name="pass"  >
 
-            <ul>
-                <?php foreach ($blogs as $blog){?>
-                    <li>
-                        <img src="<?php echo $blog->img?>" alt="">
-                        <p class="desc"><?php echo $blog->content?></p>
-                        <span class="info"><a href="#" class="read">READ</a></span>
-                    </li>
-                <?php }?>
+                    <div id="submit">
+                        <input type="submit" id="btn" name="btn" value="登录">
+                    </div>
 
-            </ul>
-
-        
-
-        <div id="more">
-            <button id="btn">加载更多.......</button>
-
+                </form>
+            </div>
         </div>
+
+
+
+
     </div>
 
 </div>
 
-
-
-<script type="text/javascript" src="js/project.js"></script>
+<script src="js/admin/login.js"></script>
 </body>
 </html>
